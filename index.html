@@ -96,6 +96,15 @@ input[type="file"] {
   box-shadow: 0 5px 12px rgba(0,0,0,0.08);
   position: relative;
   cursor: grab;
+  touch-action: manipulation;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card:active {
+  transform: scale(0.98);
 }
 
 .card img {
@@ -148,8 +157,8 @@ button {
   flex: 1;
 }
 
-button:hover {
-  opacity: 0.9;
+button:active {
+  transform: scale(0.97);
 }
 
 /* PROGRESS */
@@ -206,6 +215,58 @@ body.dark .progress {
 
 body.dark .progress .bar {
   background: #4a90e2;
+}
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+========================= */
+@media (max-width: 768px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .container {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  /* stack top controls */
+  .top-controls {
+    grid-template-columns: 1fr;
+  }
+
+  input, select, button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .upload-box {
+    padding: 18px;
+    font-size: 14px;
+  }
+
+  /* smaller image cards */
+  .card img {
+    height: 120px;
+  }
+
+  .preview {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .convert, .clear {
+    width: 100%;
+  }
 }
 </style>
 </head>
